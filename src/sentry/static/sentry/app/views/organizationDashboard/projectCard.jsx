@@ -67,23 +67,21 @@ class ProjectCard extends React.Component {
         {stats ? (
           <StyledProjectCard>
             <Flex justify="space-between" align="center">
-              <Box ml={2}>
+              <StyledProjectCardHeader>
                 <IdBadge
                   project={project}
                   avatarSize={24}
                   displayName={
-                    <StyledTitle>
-                      {hasProjectAccess ? (
-                        <Link to={`/${params.orgId}/${slug}/`}>
-                          <strong>{slug}</strong>
-                        </Link>
-                      ) : (
-                        <div>{slug}</div>
-                      )}
-                    </StyledTitle>
+                    hasProjectAccess ? (
+                      <Link to={`/${params.orgId}/${slug}/`}>
+                        <strong>{slug}</strong>
+                      </Link>
+                    ) : (
+                      <span>{slug}</span>
+                    )
                   }
                 />
-              </Box>
+              </StyledProjectCardHeader>
               <Tooltip title={bookmarkText}>
                 <Star
                   active={isBookmarked}
@@ -150,8 +148,11 @@ const ChartContainer = styled.div`
   padding-top: ${space(1)};
 `;
 
-const StyledTitle = styled.div`
+const StyledProjectCardHeader = styled(Box)`
   ${overflowEllipsis};
+  justify-content: space-between;
+  align-items: center;
+  margin-left: ${space(2)};
   padding: 16px 4px;
 `;
 

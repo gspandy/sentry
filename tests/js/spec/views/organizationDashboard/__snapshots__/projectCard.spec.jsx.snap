@@ -77,25 +77,20 @@ exports[`ProjectCard renders 1`] = `
                   className="css-v7pzd9"
                   is={null}
                 >
-                  <Box
-                    ml={2}
-                  >
+                  <StyledProjectCardHeader>
                     <Base
-                      className="css-1dvsqd3"
-                      ml={2}
+                      className="css-1x49i8-StyledProjectCardHeader efesc7i1"
                     >
                       <div
-                        className="css-1dvsqd3"
+                        className="css-1x49i8-StyledProjectCardHeader efesc7i1"
                         is={null}
                       >
                         <IdBadge
                           avatarSize={24}
                           displayName={
-                            <StyledTitle>
-                              <div>
-                                project-slug
-                              </div>
-                            </StyledTitle>
+                            <span>
+                              project-slug
+                            </span>
                           }
                           project={
                             Object {
@@ -132,11 +127,9 @@ exports[`ProjectCard renders 1`] = `
                               <ProjectBadge
                                 avatarSize={24}
                                 displayName={
-                                  <StyledTitle>
-                                    <div>
-                                      project-slug
-                                    </div>
-                                  </StyledTitle>
+                                  <span>
+                                    project-slug
+                                  </span>
                                 }
                                 hideAvatar={false}
                                 hideOverflow={true}
@@ -169,11 +162,9 @@ exports[`ProjectCard renders 1`] = `
                                   avatarProps={Object {}}
                                   avatarSize={24}
                                   displayName={
-                                    <StyledTitle>
-                                      <div>
-                                        project-slug
-                                      </div>
-                                    </StyledTitle>
+                                    <span>
+                                      project-slug
+                                    </span>
                                   }
                                   hideAvatar={false}
                                   project={
@@ -371,15 +362,9 @@ exports[`ProjectCard renders 1`] = `
                                               <div
                                                 data-test-id="badge-display-name"
                                               >
-                                                <StyledTitle>
-                                                  <div
-                                                    className="css-25y8kw-StyledTitle efesc7i1"
-                                                  >
-                                                    <div>
-                                                      project-slug
-                                                    </div>
-                                                  </div>
-                                                </StyledTitle>
+                                                <span>
+                                                  project-slug
+                                                </span>
                                               </div>
                                             </div>
                                           </Base>
@@ -394,7 +379,7 @@ exports[`ProjectCard renders 1`] = `
                         </IdBadge>
                       </div>
                     </Base>
-                  </Box>
+                  </StyledProjectCardHeader>
                   <Tooltip
                     title="Add to bookmarks"
                   >
