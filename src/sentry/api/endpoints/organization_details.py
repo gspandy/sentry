@@ -13,7 +13,11 @@ from sentry.api.decorators import sudo_required
 from sentry.api.fields import AvatarField
 from sentry.api.serializers import serialize
 from sentry.api.serializers.models.organization import (
-    DetailedOrganizationSerializer)
+    DetailedOrganizationSerializer, PROJECT_RATE_LIMIT_DEFAULT, ACCOUNT_RATE_LIMIT_DEFAULT,
+    REQUIRE_SCRUB_DATA_DEFAULT, REQUIRE_SCRUB_DEFAULTS_DEFAULT, SENSITIVE_FIELDS_DEFAULT,
+    SAFE_FIELDS_DEFAULT, STORE_CRASH_REPORTS_DEFAULT, REQUIRE_SCRUB_IP_ADDRESS_DEFAULT,
+    SCRAPE_JAVASCRIPT_DEFAULT
+)
 from sentry.api.serializers.rest_framework import ListField
 from sentry.auth.providers.saml2 import SAML2Provider
 from sentry.constants import LEGACY_RATE_LIMIT_OPTIONS, RESERVED_ORGANIZATION_SLUGS
@@ -31,15 +35,15 @@ ERR_NO_USER = 'This request requires an authenticated user.'
 
 ORG_OPTIONS = (
     # serializer field name, option key name, type, default value
-    ('projectRateLimit', 'sentry:project-rate-limit', int, 100),
-    ('accountRateLimit', 'sentry:account-rate-limit', int, 0),
-    ('dataScrubber', 'sentry:require_scrub_data', bool, False),
-    ('dataScrubberDefaults', 'sentry:require_scrub_defaults', bool, False),
-    ('sensitiveFields', 'sentry:sensitive_fields', list, None),
-    ('safeFields', 'sentry:safe_fields', list, None),
-    ('storeCrashReports', 'sentry:store_crash_reports', bool, False),
-    ('scrubIPAddresses', 'sentry:require_scrub_ip_address', bool, False),
-    ('scrapeJavaScript', 'sentry:scrape_javascript', bool, True),
+    ('projectRateLimit', 'sentry:project-rate-limit', int, PROJECT_RATE_LIMIT_DEFAULT),
+    ('accountRateLimit', 'sentry:account-rate-limit', int, ACCOUNT_RATE_LIMIT_DEFAULT),
+    ('dataScrubber', 'sentry:require_scrub_data', bool, REQUIRE_SCRUB_DATA_DEFAULT),
+    ('dataScrubberDefaults', 'sentry:require_scrub_defaults', bool, REQUIRE_SCRUB_DEFAULTS_DEFAULT),
+    ('sensitiveFields', 'sentry:sensitive_fields', list, SENSITIVE_FIELDS_DEFAULT),
+    ('safeFields', 'sentry:safe_fields', list, SAFE_FIELDS_DEFAULT),
+    ('storeCrashReports', 'sentry:store_crash_reports', bool, STORE_CRASH_REPORTS_DEFAULT),
+    ('scrubIPAddresses', 'sentry:require_scrub_ip_address', bool, REQUIRE_SCRUB_IP_ADDRESS_DEFAULT),
+    ('scrapeJavaScript', 'sentry:scrape_javascript', bool, SCRAPE_JAVASCRIPT_DEFAULT),
 )
 
 delete_logger = logging.getLogger('sentry.deletions.api')
